@@ -1,0 +1,8 @@
+# SBT generated
+target/
+project/project/
+project/target/
+
+# Intellij Idea 
+.idea/
+.idea_modules/

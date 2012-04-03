@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+  <book id="1">
+    <title>Programming in Scala</title>
+    <authors>
+      <author>Martin Odersky</author>
+      <author>Lex Spoon</author>
+      <author>Bill Venners</author>
+    </authors>
+    <isbn></isbn>
+    <description>
+      <paragraph>Scala is an object-oriented programming language for the Java Virtual Machine. In addition to being object-oriented, Scala is also a functional language, and combines the best approaches to OO and functional programming.</paragraph>
+      <paragraph>In Italian, Scala means a stairway, or steps—indeed, Scala lets you step up to a programming environment that incorporates some of the best recent thinking in programming language design while also letting you use all your existing Java code.</paragraph>
+      <paragraph>Artima is very pleased to publish a new edition of the best-selling book on Scala, written by the designer of the language, Martin Odersky. Co-authored by Lex Spoon and Bill Venners, this book takes a step-by-step tutorial approach to teaching you Scala. Starting with the fundamental elements of the language, Programming in Scala introduces functional programming from the practitioner's perspective, and describes advanced language features that can make you a better, more productive developer.</paragraph>
+    </description>
+  </book>
+  <book id="2">
+    <title>Beginning Scala</title>
+    <authors>
+      <author>David Pollak</author>
+    </authors>
+    <isbn></isbn>
+    <description>
+      <paragraph>The open source Scala language is a Java-based dynamic scripting, functional programming language. Moreover, this highly scalable scripting language lends itself well to building cloud-based/deliverable Software as a Service (SaaS) online applications.</paragraph>
+      <paragraph>Written by Lift Scala web framework founder and lead Dave Pollak, Beginning Scala takes a down-to-earth approach to teaching Scala that leads you through simple examples that can be combined to build complex, scalable systems and applications.</paragraph>
+      <paragraph>This book introduces you to the Scala programming
+      language and then guides you through Scala constructs and
+      libraries that allow small and large teams to assemble small
+      components into high-performance, scalable systems. You will
+      learn why Scala is becoming the language of choice for Web 2.0
+      companies such as Twitter as well as enterprises such as Seimens
+      and SAP.</paragraph>
+    </description>
+  </book>
+</library>

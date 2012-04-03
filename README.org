@@ -1,0 +1,20 @@
+* SBT XSLT Plugin
+
+[[https://github.com/harrah/xsbt][Simple Build Tool] for trasnforming XML files using Saxon HE XSL Transformer.
+
+** Installation
+
+Clone this repository and run the publish-local goal.
+
+** Usage
+
+Insert the following lines in your project/plugins.sbt file
+
+#+BEGIN_SRC scala
+       libraryDependencies ++= Seq(
+                    "net.sf.saxon" % "Saxon-HE" % "9.4"
+                    )
+
+       addSbtPlugin("com.jm2dev" %% "sbt-xslt-plugin" % "0.1.2")
+#+END_SRC
+
