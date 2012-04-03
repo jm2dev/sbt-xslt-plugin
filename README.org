@@ -20,3 +20,12 @@ libraryDependencies ++= Seq( "net.sf.saxon" % "Saxon-HE" % "9.4" )
 addSbtPlugin("com.jm2dev" %% "sbt-xslt-plugin" % "0.1.2")
 #+END_SRC
 
+** Configuration
+
+Add the following line to your project's build.sbt file
+
+#+BEGIN_SRC scala
+seq( com.jm2dev.sbt.plugin.xslt.XsltPlugin.xsltPluginSettings : _*)
+
+xsltPluginMasterFile := "src/main/xslt/jm.xsl"
+#+END_SRC
