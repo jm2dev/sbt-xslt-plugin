@@ -21,28 +21,45 @@ object XsltPlugin extends Plugin {
   lazy val transform =
     Command.command("transform") {
       (state: State) =>
-        transformCommand("main.xml", "main.xsl")
+        transformCommand(new File(dataSource))
         state
     }
 
-  private val dataSource = "src/main/xml/"
-  private val xslSource = "src/main/xslt/"
-  private val XslFile = xslSource + "main.xsl"
+  private def transformCommand(dataSourceDirectory: File) {
+    val listOfFiles = getListOfFiles(dataSourceDirectory)
+    listOfFiles.map( (file: File) => transform(file) )
+  }
+
+  // default values
+  private val dataSource = "src/main/xml"
+  private val XslFile = "src/main/xslt/main.xsl"
   private val dataTarget = "target/xslt-plugin/"
 
-  private def transformCommand(xmlFileName: String, xslFileName: String, outputFormat: String = "xml", indentFormat: String = "yes") {
-    val proc = new Processor(false);
-    val comp = proc.newXsltCompiler();
-    val exp = comp.compile(new StreamSource(new File(XslFile)));
-    val source = proc.newDocumentBuilder().build(new StreamSource(new File(dataSource + xmlFileName)));
-    var out = proc.newSerializer(new File("%s%s.%s".format(dataTarget, xmlFileName, outputFormat)));
-    out.setOutputProperty(Serializer.Property.METHOD, outputFormat);
-    out.setOutputProperty(Serializer.Property.INDENT, indentFormat);
+  // set up transformer
+  private val booksXsl = new File(XslFile)
+  private val proc: Processor = new Processor(false);
+  private val comp: XsltCompiler = proc.newXsltCompiler();
+  private val exp: XsltExecutable = comp.compile(new StreamSource(booksXsl));
+
+  private def transform(input: File) {
+    val output = outputFile(input.getName)
+    val source: XdmNode = proc.newDocumentBuilder().build(new StreamSource(input));
+    var out: Serializer = proc.newSerializer(output);
+    out.setOutputProperty(Serializer.Property.METHOD, "xml");
+    out.setOutputProperty(Serializer.Property.INDENT, "yes");
     var trans: XsltTransformer = exp.load();
     trans.setInitialContextNode(source);
     trans.setDestination(out);
     trans.transform();
 
-    println("Transformed!")
+    println(input.getName + " Transformed!")
+  }
+
+  private def outputFile(name: String):File = {
+    return new File(dataTarget + name)
+  }
+
+  private def getListOfFiles(directory: File):Array[File] = {
+    return (directory).listFiles.filter(_.isFile).map(_.getAbsoluteFile)
   }
 }

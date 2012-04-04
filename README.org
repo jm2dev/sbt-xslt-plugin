@@ -20,12 +20,8 @@ libraryDependencies ++= Seq( "net.sf.saxon" % "Saxon-HE" % "9.4" )
 addSbtPlugin("com.jm2dev" %% "sbt-xslt-plugin" % "0.1.2")
 #+END_SRC
 
-** Configuration
+Place the files you want to transform under src/main/xml while the
+transformation file is expected to be src/main/xslt/main.xsl
 
-Add the following line to your project's build.sbt file
+Successful output is found in target/xslt-plugin/.
 
-#+BEGIN_SRC scala
-seq( com.jm2dev.sbt.plugin.xslt.XsltPlugin.xsltPluginSettings : _*)
-
-xsltPluginMasterFile := "src/main/xslt/jm.xsl"
-#+END_SRC
