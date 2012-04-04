@@ -1,0 +1,19 @@
+#+Title:        SBT XSLT Plugin example project README
+#+AUTHOR:       José Miguel Martínez Carrasco
+#+EMAIL:        jm2dev@gmail.com
+
+* SBT XSLT Plugin Example project
+
+Simple SBT project to use as starting point for your XML
+Transformations with this plugin.
+
+The XSLT file *src/main/xslt/main.xsl* performs the transformation on
+any files placed in *src/main/xml* directory.
+
+** Usage
+
+#+BEGIN_SRC sh
+sbt transform
+#+END_SRC
+
+And transformed files are stored in *target/xslt-plugin* directory.

@@ -8,20 +8,32 @@
 
 ** Installation
 
-Clone this repository and run the publish-local goal.
+Clone this repository and run the *publish-local* goal.
 
 ** Usage
 
-Insert the following lines in your project/plugins.sbt file
+Insert the following lines in your *project/plugins.sbt* file
 
 #+BEGIN_SRC scala
 libraryDependencies ++= Seq( "net.sf.saxon" % "Saxon-HE" % "9.4" )
 
-addSbtPlugin("com.jm2dev" %% "sbt-xslt-plugin" % "0.1.2")
+addSbtPlugin("com.jm2dev" %% "sbt-xslt-plugin" % "0.1.5")
 #+END_SRC
 
-Place the files you want to transform under src/main/xml while the
-transformation file is expected to be src/main/xslt/main.xsl
+Place the files you want to transform under *src/main/xml* while the
+transformation file is expected to be *src/main/xslt/main.xsl*
 
-Successful output is found in target/xslt-plugin/.
+Successful output is found in *target/xslt-plugin/* directory.
+
+** Misc
+
+The *samples* directory includes a very simple and working sbt project
+for experimentation.
+
+*** Notes
+
+[fn:1] Yes, I like naming my XSLT files with the xsl suffix. I
+    recommend you to do the same to avoid errors.
+
+[fn:2] Please, check the version number, currently latest version is 0.1.5
 
