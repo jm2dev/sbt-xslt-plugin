@@ -4,7 +4,7 @@ name := "sbt-xslt-plugin"
 
 organization := "com.jm2dev"
 
-version := "0.1.5"
+version := "0.1.6"
 
 scalaVersion := "2.9.1"
 
