@@ -1,0 +1,23 @@
+
+{
+ "organization":"com.jm2dev",
+ "name":"sbt-xslt-plugin",
+ "version":"0.1.6",
+ "description":"SBT plugin to perform XSL Transformations.",
+ "site":"http://github.com/jm2dev/sbt-xslt-plugin",
+ "tags":["plugin","xslt","xml","transformation"],
+ "docs":"",
+ "licenses": [],
+ "resolvers": ["http://scala-tools.org/repo-releases"],
+ "dependencies": [{
+   "organization":"org.scala-tools.sbt",
+   "name": "scripted-sbt_2.9.1",
+   "version": "0.11.2"
+  },{
+   "organization":"net.sf.saxon",
+   "name": "Saxon-HE",
+   "version": "9.4"
+  }],
+ "scalas": ["2.9.1"],
+ "sbt": true
+}
